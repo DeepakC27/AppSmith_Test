@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Handlers",
+    "pageId": "Portfolio Homopage",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tinit: () => {\n\t\tstoreValue('usersList', [])\n\t},\n\tloadBtnClick: () => {\n\t\t//write code here\n\t\t// showAlert('displaying alert')\n\t\tLoadUserAsync.run((resp) => {\n\t\t\tconst formatedList = resp.map(i => ({\n\t\t\t\tid: i.id,\n\t\t\t\temail: i.email,\n\t\t\t\tname: i.name.split(' ')[0]\n\t\t\t}))\n\t\t\tstoreValue('usersList', formatedList)\n\t\t})\n\t},\n\tdisplayUserName: () => {\n\t\tconsole.log('itemRef: ', List1)\n\t\tshowAlert(`Name: ${List1.selectedItem.name}`)\n\t},\n\thandleUpload: async () => {\n\t\t//const previewUrl = await URL.createObjectURL(FilePicker1.files[0].data)\n\t\tconsole.log('image: ', FilePicker1.files[0].name)\n\t}\n}",
+    "variables": []
+  },
+  "id": "Portfolio Homopage_Handlers",
+  "deleted": false,
+  "gitSyncId": "6331237ec85ec46372f316ba_633d9adc28907427c6dd5a18"
+}
